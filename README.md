@@ -1,6 +1,12 @@
 # 🏎️ F1 Analytics Project
 
 ![F1 Logo](https://camo.githubusercontent.com/7efe61a391ed58a4c8fd614b9f6c36618935754f1d6bac17f22c7340853ab221/68747470733a2f2f75706c6f61642e77696b696d656469612e6f72672f77696b6970656469612f636f6d6d6f6e732f7468756d622f332f33332f46312e7376672f3235363070782d46312e7376672e706e67)
+
+[![GitHub](https://img.shields.io/badge/GitHub-Repository-blue)](https://github.com/yeagx/f1-season-winner-predictor)
+[![Streamlit App](https://img.shields.io/badge/Streamlit-App-green)](https://f1-season-winner-predictor.streamlit.app/)
+
+This project is a machine-learning web app that predicts the Formula 1 season winner using race-level and driver-level data. The app processes F1 dataset and trains an XGBoost model to predict the season champion.
+
 ---
 
 ## 🚀 Key Features
@@ -44,7 +50,7 @@ Predicts:
 - 🏆 Constructor-influenced performance  
 
 ### 🔹 6. Interactive Streamlit App
-Upload any F1 dataset and:
+Works directly with F1.xlsx dataset:
 - View analytics dashboards  
 - Explore driver/team comparisons  
 - Generate tire strategy insights  
@@ -83,7 +89,6 @@ Upload any F1 dataset and:
 - Tire Compound  
 
 This schema supports BI dashboards and ML training pipelines.
-
 ---
 
 ## 🧠 Machine Learning Model
@@ -113,14 +118,18 @@ Predict the **next season's driver champion**.
 
 ## 🖥️ Streamlit App
 
-Run the app:
+**Live App:** [f1-season-winner-predictor.streamlit.app](https://f1-season-winner-predictor.streamlit.app/)
+
+Run the app locally:
 
 ```bash
 streamlit run app.py
 ```
 
+**Note:** The app works directly with `F1.xlsx` file (no file upload needed). Make sure the file is in the same directory as `app.py`.
+
 Includes:
-- Dataset upload
+- Direct dataset loading from F1.xlsx
 - Automated cleaning
 - Analytics dashboard
 - Tire strategy insights
@@ -132,8 +141,8 @@ Includes:
 
 1. **Clone repo**
 ```bash
-git clone https://github.com/YOUR-USERNAME/F1-Analytics.git
-cd F1-Analytics
+git clone https://github.com/yeagx/f1-season-winner-predictor.git
+cd f1-season-winner-predictor
 ```
 
 2. **Install dependencies**
