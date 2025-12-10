@@ -1,14 +1,198 @@
-<p align="center">
-  <img src="https://depi.gov.eg/assets/images/proAr.png" alt="DEPI Logo" width="200"/>
-  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/F1.svg/2560px-F1.svg.png" alt="Project Logo" width="200"/>
-</p>
+# 🏎️ F1 Analytics Project
 
-<h1 align="center">F1 Race Data Analysis</h1>
+![F1 Logo](https://camo.githubusercontent.com/7efe61a391ed58a4c8fd614b9f6c36618935754f1d6bac17f22c7340853ab221/68747470733a2f2f75706c6f61642e77696b696d656469612e6f72672f77696b6970656469612f636f6d6d6f6e732f7468756d622f332f33332f46312e7376672f3235363070782d46312e7376672e706e67)
 
 ---
 
-## 🚀 About the Project
-This project is a collaborative data analysis of Formula 1. As a team, we will analyze historical race outcomes, driver and team performance, and key in-race events like pit stops and qualifying results. Our goal is to transform raw data into a clear, visual story that highlights the key trends and insights of the sport.
+## 📁 Project Structure
 
-## 📂 Dataset
-https://drive.google.com/drive/folders/1roj8_d4dkwvxPcRSWGYXyyLDLg13MDV7?usp=sharing
+---
+
+## 🚀 Key Features
+
+### 🔹 1. Race-Level Analytics
+- Pit-stop efficiency  
+- Driver positioning and overtakes  
+- Aggression score modeling  
+- Lap consistency metrics  
+- Team execution patterns  
+
+### 🔹 2. Driver-Level Analytics
+- Season consistency  
+- Average finishing position  
+- Performance trends  
+- Driver–tire efficiency  
+- Positional gain vs aggression  
+
+### 🔹 3. Team (Constructor) Analytics
+- Pit crew performance  
+- Tire usage strategy  
+- Season scoring predictability  
+- Strengths on wet/dry races  
+
+### 🔹 4. Tire Compound Strategy Engine
+- Stint length modeling  
+- Compound efficiency (position gain per lap)  
+- Weather-dependent behavior  
+- Driver/Team tire profiles  
+
+### 🔹 5. Predictive Machine Learning Model
+Built using:
+- XGBoostClassifier  
+- Feature engineering from DriverSeason table  
+- Hyperparameter tuning  
+- Probability-based ranking  
+- Feature importance analysis  
+
+Predicts:
+- 🥇 **Next season's winner**  
+- 🏆 Constructor-influenced performance  
+
+### 🔹 6. Interactive Streamlit App
+Upload any F1 dataset and:
+- View analytics dashboards  
+- Explore driver/team comparisons  
+- Generate tire strategy insights  
+- Predict the next champion  
+
+---
+
+## 🧹 Data Cleaning Summary
+
+### ✅ Race-Level Fixes
+- Standardized compound naming  
+- Removed pit time outliers (<15s or >40s)  
+- Fixed missing stint values  
+- Validated lap and timing logic  
+
+### ✅ Stint & Pit Logic Fixes
+- Ensured **stints = pit_stops + 1**  
+- Corrected last stint anomalies  
+- Removed duplicates  
+- Cleaned aggression score outliers  
+
+---
+
+## 🧱 Data Model (Constellation Schema)
+
+### **Fact Tables**
+- `Fact_PitStops` — granular event-level pit/stint data  
+- `DriverRace` — engineered per-race metrics  
+- `DriverSeason` — season-level aggregates  
+
+### **Dimensions**
+- Driver  
+- Constructor  
+- Race  
+- Season  
+- Tire Compound  
+
+This schema supports BI dashboards and ML training pipelines.
+
+---
+
+## 📊 Sample Visualizations
+
+> Insert your images here:
+
+---
+
+## 🧠 Machine Learning Model
+
+### **Objective**  
+Predict the **next season's driver champion**.
+
+### **Model**  
+`XGBoostClassifier`
+
+### **Engineered Features Include:**
+- avg_finish  
+- avg_points  
+- total_points  
+- aggression  
+- avg_pit_time  
+- avg_pos_gain  
+- races_attended  
+- constructor_strength  
+
+### **Output**  
+- Champion prediction  
+- Probability ranking  
+- Feature importance chart  
+
+---
+
+## 🖥️ Streamlit App
+
+Run the app:
+
+```bash
+streamlit run app.py
+```
+
+Includes:
+- Dataset upload
+- Automated cleaning
+- Analytics dashboard
+- Tire strategy insights
+- Season winner prediction
+
+---
+
+## 📦 Installation
+
+1. **Clone repo**
+```bash
+git clone https://github.com/YOUR-USERNAME/F1-Analytics.git
+cd F1-Analytics
+```
+
+2. **Install dependencies**
+```bash
+pip install -r requirements.txt
+```
+
+3. **Launch notebooks**
+```bash
+jupyter notebook
+```
+
+4. **Start Streamlit app**
+```bash
+streamlit run app.py
+```
+
+---
+
+## 🛠️ Technologies Used
+
+- Python (Pandas, NumPy, Matplotlib, Seaborn)
+- Machine Learning: Scikit-learn, XGBoost
+- Streamlit
+- Power BI
+- DAX
+- SQL
+- Git & GitHub
+
+---
+
+## 🔮 Future Enhancements
+
+- Add race winner prediction model
+- Integrate lap-time simulation
+- Add neural network performance model
+- Extend dataset to older seasons
+- Deploy full web dashboard with authentication
+
+---
+
+## 🤝 Contributions
+
+Pull requests, issues, and suggestions are welcome!
+
+---
+
+## ⭐ Support
+
+If you found this project interesting, please ⭐ star the repo — it helps a lot!
+
